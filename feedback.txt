@@ -1,0 +1,26 @@
+Project Proposal: 1/3
+
+The proposal should have discussed how P0 is to be extended to allow explicit
+deallocation, it should have discussed what explicit deallocation is, and
+what the issues are for explicit deallocation, and the possible techniques.
+The term dangling reference is used incorrectly. The proposal does not show
+an understanding of the issues.
+
+Revised Proposal:
+
+better, but taking too narrowly the view of C and still shows insufficient
+understanding: you need to extend P0 types with a pointer type. Variables of
+pointer types can point to heap-allocated objects: arrays are the most
+important objects to allocate on the heap, not integers or booleans. You
+don't need a "sizeof" function, languages other than C don't have that either.
+Neither the proposal nor the cited references show that the problem was
+sufficiently understood. Write some Pascal programs to understand how pointers
+in typed languages are used.
+
+Project Artifacts:
+
+The extension of the language is fine, but the implementation by importing
+new, dispose, get_value, set_value etc. from Python is too simple. The
+heap should reside in WebAssembly memory, not Python memory. The poster has
+a clear structure. I didn't quite understand how the linked list on the
+poster relates to your implementation.
